@@ -1,0 +1,342 @@
+:root {
+  --bg: #0b1220;
+  --surface: #0f172a;
+  --muted: #94a3b8;
+  --text: #e5e7eb;
+  --primary: #f5b533;
+  --accent: #06b6d4;
+  --radius: 16px;
+  --container: 1180px;
+  --gap: 20px;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  font-family: "Cairo", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+}
+
+/* الأساسيات */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ✅ الهيدر */
+.site-header {
+  position: relative;
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  padding: 10px 0;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 14px 20px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* ✅ الشعار */
+.brand {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.brand-logo {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 10px rgba(245,181,51,0.35);
+}
+.brand-texts {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.brand-text {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+.brand-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ✅ روابط النافبار */
+.nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.nav a {
+  position: relative;
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* الخط الذهبي تحت النص */
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 60%;
+}
+
+.nav a:hover,
+.nav a.active {
+  opacity: 1;
+}
+
+/* ✅ زر احجز جلسة */
+.cta {
+  background: linear-gradient(135deg, var(--primary), #ffe08a);
+  color: #1a1300;
+  font-weight: 800;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  box-shadow: none; /* 🔥 أزل أي ظل أو خط أسود */
+  border: none; /* 🔥 تأكد أنه بدون حدود */
+  transition: transform 0.2s;
+}
+.cta:hover {
+  transform: translateY(-1px);
+}
+
+/* ✅ زر البرغر */
+.burger {
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 760px) {
+  .nav {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .cta {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
+
+  .header-inner {
+    flex-direction: row; /* ✅ خلي الاتجاه طبيعي */
+    justify-content: space-between;
+  }
+
+  /* ✅ البرغر الآن في أقصى اليمين */
+  .burger {
+    order: 1;
+    margin-right: 10px; /* لصقه باليمين */
+    margin-left: 0;
+    z-index: 2000;
+  }
+
+  /* ✅ الشعار في المنتصف */
+  .brand {
+    order: 2;
+    margin: 0 auto;
+  }
+
+  /* ✅ زر احجز جلسة باليسار */
+  .cta {
+    order: 3;
+    margin-left: 10px;
+  }
+
+  /* القائمة لما تفتح */
+  body.nav-open .nav {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background: var(--surface);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 14px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 10px;
+    box-shadow: var(--shadow);
+    animation: slideIn 0.25s ease forwards;
+    width: 180px;
+    z-index: 2000;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+
+    :root {
+      --bg: #0b1220;
+      --surface: #0f172a;
+      --primary: #f5b533;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    body {
+      margin: 0;
+      font-family: "Cairo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px 30px;
+    }
+    header h1 {
+      color: var(--primary);
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    header p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+    .filter-buttons button {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      padding: 10px 26px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+    .filter-buttons button:hover,
+    .filter-buttons button.active {
+      background: var(--primary);
+      color: #1a1300;
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 0 30px 60px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      background: var(--surface);
+    }
+    .item img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      transition: none;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(245,181,51,0.5);
+    }
+    .lightbox span {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      font-size: 2.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--surface);
+      text-align: center;
+      color: var(--muted);
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
