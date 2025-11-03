@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="/CSS/page2.CSS" />
   <script type="application/ld+json">
@@ -69,7 +70,10 @@
 </head>
 
 <body>
-  <!-- الهيدر -->
+<!-- خلفية الجزيئات المتحركة -->
+<canvas id="particles-canvas"></canvas>
+
+  <!-- الهيدر - Bootstrap Navbar -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#home">
@@ -85,14 +89,14 @@
       </button>
 
       <nav class="nav">
-        <a href="/index.html" class="active"><i class="bi bi-house-door"></i> الرئيسية</a>
-        <a href="/index.html#services"><i class="bi bi-briefcase"></i> الخدمات</a>
+        <a href="/index.html"><i class="bi bi-house-door"></i> الرئيسية</a>
+        <a href="#services"><i class="bi bi-briefcase"></i> الخدمات</a>
         <a href="/pages/page2.html#all"><i class="bi bi-collection-play"></i> معرض أعمالنا</a>
-        <a href="/index.html#why-us"><i class="bi bi-lightbulb"></i> لماذا نحن</a>
-        <a href="/index.html#contact"><i class="bi bi-chat-dots"></i> تواصل</a>
+        <a href="#why-us"><i class="bi bi-lightbulb"></i> لماذا نحن</a>
+        <a href="#contact"><i class="bi bi-chat-dots"></i> تواصل</a>
       </nav>
 
-      <a class="cta" href="/index.html#contact"><i class="bi bi-calendar2-check"></i> احجز جلسة</a>
+      <a class="cta" href="#contact"><i class="bi bi-calendar2-check"></i> احجز جلسة</a>
     </div>
   </header>
 
@@ -106,43 +110,368 @@
     <button class="active" data-filter="all">الكل</button>
     <button data-filter="wedding">أعراس</button>
     <button data-filter="personal">شخصية</button>
-    <button data-filter="products">تخرج</button>
-    <button data-filter="events">مناسبات</button>
+    <button data-filter="Grad">تخرج</button>
+    <button data-filter="products">محلات</button>
+    <button data-filter="cars">سيارات</button>
   </div>
 
   <!-- الصور -->
   <section class="gallery">
     <!-- 🟡 أعراس -->
-    <div class="item wedding"><img src="/images/20.jpg" alt="زفاف 1"></div>
-    <div class="item wedding"><img src="/images/21.jpg" alt="زفاف 2"></div>
-    <div class="item wedding"><img src="/images/22.jpg" alt="زفاف 3"></div>
-    <div class="item wedding"><img src="/images/23.jpg" alt="زفاف 4"></div>
-    <div class="item wedding"><img src="/images/24.jpg" alt="زفاف 5"></div>
-    <div class="item wedding"><img src="/images/25.jpg" alt="زفاف 6"></div>
-    <div class="item wedding"><img src="/images/26.jpg" alt="زفاف 7"></div>
+    <!-- 🟡 أعراس -->
+   <div class="item wedding">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107277/IMG_8466_tb609a.jpg" 
+    alt="زفاف"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
 
-    <!-- 🧍‍♀️ شخصية -->
-    <div class="item personal"><img src="/images/personal1.jpg" alt="صورة شخصية 1"></div>
-    <div class="item personal"><img src="/images/personal2.jpg" alt="صورة شخصية 2"></div>
-    <div class="item personal"><img src="/images/personal3.jpg" alt="صورة شخصية 3"></div>
-    <div class="item personal"><img src="/images/personal4.jpg" alt="صورة شخصية 4"></div>
-    <div class="item personal"><img src="/images/personal5.jpg" alt="صورة شخصية 5"></div>
+<div class="item wedding">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107286/IMG_9984_bsg6xv.jpg" 
+    alt="زفاف"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
 
-    <!-- 🛍️ منتجات -->
-    <div class="item products"><img src="/images/1.jpg" alt="منتج 1"></div>
-    <div class="item products"><img src="/images/2.jpg" alt="منتج 2"></div>
-    <div class="item products"><img src="/images/3.jpg" alt="منتج 3"></div>
-    <div class="item products"><img src="/images/5.jpg" alt="منتج 4"></div>
-    <div class="item products"><img src="/images/6.jpg" alt="منتج 5"></div>
-    <div class="item products"><img src="/images/7.jpg" alt="منتج 6"></div>
-    <div class="item products"><img src="/images/9.jpg" alt="منتج 7"></div>
-    <div class="item products"><img src="/images/10.jpg" alt="منتج 8"></div>
-    <div class="item products"><img src="/images/11.jpg" alt="منتج 9"></div>
+<div class="item wedding">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107285/IMG_8597_z3cdvd.jpg" 
+    alt="زفاف"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
 
-    <!-- 🎉 مناسبات -->
-    <div class="item events"><img src="/images/event1.jpg" alt="مناسبة 1"></div>
-    <div class="item events"><img src="/images/event2.jpg" alt="مناسبة 2"></div>
-    <div class="item events"><img src="/images/event3.jpg" alt="مناسبة 3"></div>
+<div class="item wedding">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107284/IMG_9968_drkozj.jpg" 
+    alt="زفاف"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item wedding">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107284/IMG_8594_ip9lwt.jpg" 
+    alt="زفاف"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item wedding">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107278/IMG_9965_hrgprg.jpg" 
+    alt="زفاف"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item wedding">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107266/IMG_7750-2_cq0jqp.jpg" 
+    alt="زفاف"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item wedding">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107269/IMG_8439_djex10.jpg" 
+    alt="زفاف"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item wedding">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107273/IMG_8591_fjxpov.jpg" 
+    alt="زفاف"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+
+
+
+
+    <!-- 🛍️ محلات -->
+<!-- 🛍️ محلات -->
+<div class="item products">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107326/IMG_9136_cdjp4e.jpg" 
+    alt="محل"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item products">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107321/IMG_9135_wsayqq.jpg" 
+    alt="محل"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item products">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107315/IMG_9055_a0ia91.jpg" 
+    alt="محل"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item products">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107313/IMG_9091_r2gwf8.jpg" 
+    alt="محل"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item products">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107312/IMG_9059_cemb2z.jpg" 
+    alt="محل"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item products">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107311/IMG_9052_zpn7ke.jpg" 
+    alt="محل"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item products">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107309/IMG_8855_m4exga.jpg" 
+    alt="محل"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item products">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107309/IMG_8856_di8vtt.jpg" 
+    alt="محل"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+
+    <!-- 🎓 تخرج -->
+   <!-- 🎓 تخرج -->
+<div class="item Grad">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107161/IMG_8572_rujprz.jpg" 
+    alt="تخرج"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item Grad">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107163/IMG_8567_q7mnxo.jpg" 
+    alt="تخرج"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item Grad">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107168/IMG_8571_svzzyl.jpg" 
+    alt="تخرج"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item Grad">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107168/IMG_8580_nuit5f.jpg" 
+    alt="تخرج"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item Grad">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107168/IMG_8576_ah0uat.jpg" 
+    alt="تخرج"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+<div class="item Grad">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107167/IMG_8509_cvbi9x.jpg" 
+    alt="تخرج"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200"
+  >
+</div>
+
+
+    <!-- 🚗 سيارات -->
+<!-- 🚗 سيارات -->
+<div class="item cars">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107115/IMG_6665-2_vwcnpl.jpg" 
+    alt="سيارة"
+    loading="lazy"
+    decoding="async"
+    width="900" height="600"
+  >
+</div>
+
+<div class="item cars">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107108/IMG_6660_aldu6a.jpg" 
+    alt="سيارة"
+    loading="lazy"
+    decoding="async"
+    width="900" height="600"
+  >
+</div>
+
+<div class="item cars">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107113/IMG_6660-2_fl09jb.jpg" 
+    alt="سيارة"
+    loading="lazy"
+    decoding="async"
+    width="900" height="600"
+  >
+</div>
+
+<div class="item cars">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1600,c_limit,dpr_auto/v1762107125/IMG_6670_phy262.jpg" 
+    alt="سيارة"
+    loading="lazy"
+    decoding="async"
+    width="900" height="600"
+  >
+</div>
+
+
+
+<div class="item personal">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_800/v1762107285/1_zejjww.jpg" 
+    alt="جلسة شخصية"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200">
+</div>
+
+<div class="item personal">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_800/v1762107298/IMG_8509_qxxm6q.jpg" 
+    alt="جلسة شخصية"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200">
+</div>
+
+<div class="item personal">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_800/v1762107299/IMG_8541_erl0pv.jpg" 
+    alt="جلسة شخصية"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200">
+</div>
+
+<div class="item personal">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_800/v1762107301/IMG_8525_kzzj4v.jpg" 
+    alt="جلسة شخصية"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200">
+</div>
+
+<div class="item personal">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_800/v1762107303/IMG_8507_gkx4iu.jpg" 
+    alt="جلسة شخصية"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200">
+</div>
+
+<div class="item personal">
+  <img 
+    src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_800/v1762107303/IMG_8545_zazz9y.jpg" 
+    alt="جلسة شخصية"
+    loading="lazy"
+    decoding="async"
+    width="800" height="1200">
+</div>
+
+<script>
+document.querySelectorAll('.filter-buttons button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // انتظر شوية بعد الفلترة لتحديث الصور
+    setTimeout(() => {
+      document.querySelectorAll('.gallery img[loading="lazy"]').forEach(img => {
+        const src = img.getAttribute('src');
+        img.setAttribute('src', src + '?t=' + Date.now()); // يعيد تحميل الصورة
+      });
+    }, 100);
+  });
+});
+</script>
+
+
   </section>
 
   <footer class="site-footer">
@@ -155,6 +484,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/JS/page2.js"></script>
 </body>
 </html>

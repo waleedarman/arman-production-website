@@ -98,6 +98,9 @@
 
 
 <body>
+<!-- خلفية الجزيئات المتحركة -->
+<canvas id="particles-canvas"></canvas>
+
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#home">
@@ -113,7 +116,7 @@
       </button>
 
       <nav class="nav">
-        <a href="/index.html" class="active"><i class="bi bi-house-door"></i> الرئيسية</a>
+        <a href="/index.html"><i class="bi bi-house-door"></i> الرئيسية</a>
         <a href="#services"><i class="bi bi-briefcase"></i> الخدمات</a>
         <a href="/pages/page2.html#all"><i class="bi bi-collection-play"></i> معرض أعمالنا</a>
         <a href="#why-us"><i class="bi bi-lightbulb"></i> لماذا نحن</a>
@@ -123,6 +126,7 @@
       <a class="cta" href="#contact"><i class="bi bi-calendar2-check"></i> احجز جلسة</a>
     </div>
   </header>
+  
 
   <main id="home">
     <section class="hero">
@@ -144,135 +148,140 @@
         </div>
 
         <div class="hero-image">
-          <img src="/images/image copy 4.png" alt="استوديو تصوير احترافي">
+          <img src="/images//105.jpg" alt="استوديو تصوير احترافي">
         </div>
       </div>
     </section>
+<section id="services" class="features container">
+  <h2><i class="bi bi-briefcase-fill"></i> الخدمات المقدّمة</h2>
+  <p class="sub">استعرض بعض لقطاتنا وأعمالنا الاحترافية</p>
 
-    <section id="services" class="features container">
-      <h2><i class="bi bi-briefcase-fill"></i> الخدمات المقدّمة</h2>
-      <p class="sub">نقدّم مجموعة متنوعة من خدمات التصوير والإنتاج الفني بأعلى جودة واحترافية.</p>
-
-      <div class="grid-services">
-        <div class="service-card">
-          <i class="bi bi-megaphone-fill"></i>
-          <h3>تصوير محتوى تسويقي للسوشال ميديا</h3>
-          <p>إنتاج محتوى بصري إبداعي يعزز هوية العلامة التجارية ويجذب الجمهور على المنصات الرقمية.</p>
+  <div class="services-carousel">
+    <div class="swiper pureImages">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="service-img-wrapper">
+            <img src="/images/104.jpg" alt="تصوير محتوى تسويقي">
+            <div class="service-name">  طباعة صور</div>
+          </div>
         </div>
-
-        <div class="service-card">
-          <i class="bi bi-heart-fill"></i>
-          <h3>تصوير مناسبات خارجية (حفلات، تخرّج، أعراس)</h3>
-          <p>تغطية ميدانية شاملة بعدسات سينمائية لالتقاط أجمل اللحظات بواقعية وإحساس.</p>
+        <div class="swiper-slide">
+          <div class="service-img-wrapper">
+            <img src="/images/107.jpg" alt="تصوير مناسبات">
+            <div class="service-name">إنتاج محتوى احترافي</div>
+          </div>
         </div>
-
-        <div class="service-card">
-          <i class="bi bi-cart-check-fill"></i>
-          <h3>تصوير منتجات لمتاجر إلكترونية</h3>
-          <p>صور عالية الجودة بخلفيات نظيفة وإضاءة مدروسة لعرض منتجاتك بأفضل شكل ممكن.</p>
+        <div class="swiper-slide">
+          <div class="service-img-wrapper">
+            <img src="/images/102.jpg" alt="تصوير منتجات">
+            <div class="service-name"> تصوير الخريجين</div>
+          </div>
         </div>
-
-        <div class="service-card">
-          <i class="bi bi-bag-fill"></i>
-          <h3>تصوير منتجات</h3>
-          <p>تصوير احترافي يعرض تفاصيل المنتج بشكل جذّاب مناسب للإعلانات والبروشورات.</p>
+        <div class="swiper-slide">
+          <div class="service-img-wrapper">
+            <img src="/images/103.jpg" alt="تصوير  ومونتاج دعائي ">
+            <div class="service-name"> تصوير  ومونتاج دعائي </div>
+          </div>
         </div>
-
-        <div class="service-card">
-          <i class="bi bi-person-bounding-box"></i>
-          <h3>جلسات تصوير شخصية</h3>
-          <p>جلسات بورتريه مميزة في الاستوديو أو مواقع خارجية مع توجيه احترافي للزوايا والإضاءة.</p>
+        <div class="swiper-slide">
+          <div class="service-img-wrapper">
+            <img src="/images/108.jpg" alt="جلسات تصوير">
+            <div class="service-name">  تصوير المنتجات</div>
+          </div>
         </div>
-
-        <div class="service-card">
-          <i class="bi bi-camera-video-fill"></i>
-          <h3>تصوير فيديو قصير</h3>
-          <p>إنتاج فيديوهات قصيرة (Reels - Shorts) بجودة عالية وسيناريو جذّاب مناسب للسوشال ميديا.</p>
+        <div class="swiper-slide">
+          <div class="service-img-wrapper">
+            <img src="/images/105.jpg" alt="فيديو قصير">
+            <div class="service-name">  تصوير الافراح والمناسبات </div>
+          </div>
         </div>
-
-        <div class="service-card">
-          <i class="bi bi-film"></i>
-          <h3>مونتاج فيديو احترافي</h3>
-          <p>مونتاج ديناميكي مع تصحيح ألوان ومؤثرات صوتية ومرئية مناسبة لمختلف أنواع المشاريع.</p>
-        </div>
-
-        <div class="service-card">
-          <i class="bi bi-brush-fill"></i>
-          <h3>تصميم هوية بصرية وإعلانات</h3>
-          <p>نصمم هوية متكاملة لشركتك تشمل الشعارات، البوسترات، والبراند لانسكيب المتناسق مع محتواك المصوّر.</p>
+        <div class="swiper-slide">
+          <div class="service-img-wrapper">
+            <img src="/images/106.jpg" alt="مونتاج فيديو">
+            <div class="service-name">مونتاج فيديو احترافي</div>
+          </div>
         </div>
       </div>
-    </section>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
 
-    <section id="portfolio" class="container portfolio">
-      <h2><i class="bi bi-collection-play"></i> نماذج من أعمالنا</h2>
-      <p class="sub">
-        لمشاهدة باقي الجلسات والصور
-        <a href="/pages/page2.html#all" style="color: var(--primary); font-weight:700; text-decoration: underline;">اضغط هنا</a>
-      </p>
 
-      <div class="swiper mySwiper gallerySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <figure class="gallery-card">
-              <img src="/images/image copy 12.png" alt="تصوير محلات" />
-              <div class="overlay">
-                <h3><i class="bi bi-bag"></i> تصوير محلات</h3>
-                <a href="/pages/page2.html#all" class="btn-view glightbox">مشاهدة المزيد من الصور</a>
-              </div>
-              <figcaption><i class="bi bi-bag"></i> تصوير محلات</figcaption>
-            </figure>
+<section id="portfolio" class="container portfolio">
+  <h2><i class="bi bi-collection-play"></i> نماذج من أعمالنا</h2>
+  <p class="sub">
+    لمشاهدة باقي الجلسات والصور
+    <a href="/pages/page2.html#all" style="color: var(--primary); font-weight:700; text-decoration: underline;">اضغط هنا</a>
+  </p>
+
+  <div class="swiper mySwiper gallerySwiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <figure class="gallery-card">
+          <img src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1200/v1762107302/1_jvra62.jpg" alt="تصوير محلات" />
+          <div class="overlay">
+            <h3><i class="bi bi-bag"></i> تصوير محلات</h3>
+            <a href="/pages/page2.html#products" class="btn-view glightbox">مشاهدة المزيد من الصور</a>
           </div>
-
-          <div class="swiper-slide">
-            <figure class="gallery-card">
-              <img src="/images/503268694_1314860327312632_4425871623320071198_n.jpg" alt="جلسة أطفال" />
-              <div class="overlay">
-                <h3><i class="bi bi-emoji-smile"></i> جلسة أطفال</h3>
-                <a href="/pages/page2.html#all" class="btn-view glightbox">مشاهدة المزيد من الصور</a>
-              </div>
-              <figcaption><i class="bi bi-emoji-smile"></i> جلسة أطفال</figcaption>
-            </figure>
-          </div>
-
-          <div class="swiper-slide">
-            <figure class="gallery-card">
-              <img src="/images/image copy 10.png" alt="جلسة صور شخصية" />
-              <div class="overlay">
-                <h3><i class="bi bi-person-video"></i> جلسة صور شخصية</h3>
-                <a href="/pages/page2.html#all" class="btn-view glightbox">مشاهدة المزيد من الصور</a>
-              </div>
-              <figcaption><i class="bi bi-person-video"></i> جلسة صور شخصية</figcaption>
-            </figure>
-          </div>
-
-          <div class="swiper-slide">
-            <figure class="gallery-card">
-              <img src="/images/image copy 8.png" alt="جلسة خريجين" />
-              <div class="overlay">
-                <h3><i class="bi bi-mortarboard"></i> جلسة خريجين</h3>
-                <a href="/pages/page2.html#products" class="btn-view glightbox">مشاهدة المزيد من الصور</a>
-              </div>
-              <figcaption><i class="bi bi-mortarboard"></i> جلسة خريجين</figcaption>
-            </figure>
-          </div>
-
-          <div class="swiper-slide">
-            <figure class="gallery-card">
-              <img src="/images/504920977_1317541897044475_1667460188433724544_n.jpg" alt="تغطية زفاف" />
-              <div class="overlay">
-                <h3><i class="bi bi-heart"></i> تغطية زفاف</h3>
-                <a href="/pages/page2.html#wedding" class="btn-view glightbox">مشاهدة المزيد من الصور</a>
-              </div>
-              <figcaption><i class="bi bi-heart"></i> تغطية زفاف</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+          <figcaption><i class="bi bi-bag"></i> تصوير محلات</figcaption>
+        </figure>
       </div>
-    </section>
+
+      <div class="swiper-slide">
+        <figure class="gallery-card">
+          <img src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1200/v1762107285/1_zejjww.jpg" alt="جلسة صور شخصية" />
+          <div class="overlay">
+            <h3><i class="bi bi-person-video"></i> جلسة صور شخصية</h3>
+            <a href="/pages/page2.html#personal" class="btn-view glightbox">مشاهدة المزيد من الصور</a>
+          </div>
+          <figcaption><i class="bi bi-person-video"></i> جلسة صور شخصية</figcaption>
+        </figure>
+      </div>
+
+      <div class="swiper-slide">
+        <figure class="gallery-card">
+          <img src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1200/v1762107163/IMG_8567_q7mnxo.jpg" alt="جلسة خريجين" />
+          <div class="overlay">
+            <h3><i class="bi bi-mortarboard"></i> جلسة خريجين</h3>
+            <a href="/pages/page2.html#Grad" class="btn-view glightbox">مشاهدة المزيد من الصور</a>
+          </div>
+          <figcaption><i class="bi bi-mortarboard"></i> جلسة خريجين</figcaption>
+        </figure>
+      </div>
+
+      <div class="swiper-slide">
+        <figure class="gallery-card">
+          <img src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1200/v1762107108/IMG_6660_aldu6a.jpg" alt="CARS" />
+          <div class="overlay">
+            <h3>CARS</h3>
+            <a href="/pages/page2.html#cars" class="btn-view glightbox">مشاهدة المزيد من الصور</a>
+          </div>
+          <figcaption>CARS</figcaption>
+        </figure>
+      </div>
+
+      <div class="swiper-slide">
+        <figure class="gallery-card">
+          <img src="https://res.cloudinary.com/dmvcvbds8/image/upload/f_auto,q_auto,w_1200/v1762107182/1_dica2f.jpg" alt="تغطية اعراس" />
+          <div class="overlay">
+            <h3><i class="bi bi-heart"></i> تغطية اعراس</h3>
+            <a href="/pages/page2.html#wedding" class="btn-view glightbox">مشاهدة المزيد من الصور</a>
+          </div>
+          <figcaption><i class="bi bi-heart"></i> تغطية اعراس</figcaption>
+        </figure>
+      </div>
+
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
 
     <section id="promo-video" class="promo-section">
       <div class="container promo-inner">
@@ -351,6 +360,9 @@
       </div>
     </div>
   </footer>
+
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
