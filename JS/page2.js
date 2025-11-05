@@ -12,7 +12,7 @@ buttons.forEach(btn => {
   });
 });
 
-// Particle Background Animation
+
 function initParticles() {
   const canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
@@ -29,7 +29,6 @@ function initParticles() {
       this.reset();
       this.y = Math.random() * canvas.height;
     }
-    
     reset() {
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
@@ -38,15 +37,12 @@ function initParticles() {
       this.speedY = Math.random() * 0.5 - 0.25;
       this.opacity = Math.random() * 0.5 + 0.2;
     }
-    
     update() {
       this.x += this.speedX;
       this.y += this.speedY;
-      
       if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
       if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
     }
-    
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -55,36 +51,24 @@ function initParticles() {
     }
   }
   
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle());
-  }
+  for (let i = 0; i < particleCount; i++) particles.push(new Particle());
   
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    particles.forEach(particle => {
-      particle.update();
-      particle.draw();
-    });
-    
-    // Connect nearby particles
-    particles.forEach((particle, i) => {
-      particles.slice(i + 1).forEach(otherParticle => {
-        const dx = particle.x - otherParticle.x;
-        const dy = particle.y - otherParticle.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < 120) {
+    particles.forEach(p => { p.update(); p.draw(); });
+    particles.forEach((p, i) => {
+      particles.slice(i + 1).forEach(o => {
+        const dx = p.x - o.x, dy = p.y - o.y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 120) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(245, 181, 51, ${0.1 * (1 - distance / 120)})`;
+          ctx.strokeStyle = `rgba(245, 181, 51, ${0.1 * (1 - d / 120)})`;
           ctx.lineWidth = 0.5;
-          ctx.moveTo(particle.x, particle.y);
-          ctx.lineTo(otherParticle.x, otherParticle.y);
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(o.x, o.y);
           ctx.stroke();
         }
       });
     });
-    
     requestAnimationFrame(animate);
   }
   
@@ -96,7 +80,7 @@ function initParticles() {
   });
 }
 
-// Navigation bar active state management
+// 🔹 إدارة الروابط النشطة في النافبار
 function initNavigation() {
   const navLinks = document.querySelectorAll('.nav a');
   
@@ -105,15 +89,12 @@ function initNavigation() {
     if (linkElement) {
       linkElement.classList.add('active');
       const linkHref = linkElement.getAttribute('href');
-      if (linkHref) {
-        localStorage.setItem('activeNavLink', linkHref);
-      }
+      if (linkHref) localStorage.setItem('activeNavLink', linkHref);
     }
   }
   
   function determineActiveLink() {
     const currentPath = window.location.pathname;
-    
     if (currentPath.includes('page2.html')) {
       const savedActiveLink = localStorage.getItem('activeNavLink');
       if (savedActiveLink && savedActiveLink.includes('page2.html')) {
@@ -123,11 +104,8 @@ function initNavigation() {
           return;
         }
       }
-      
       const galleryLink = document.querySelector('.nav a[href*="page2.html"]');
-      if (galleryLink) {
-        setActiveLink(galleryLink);
-      }
+      if (galleryLink) setActiveLink(galleryLink);
     }
   }
   
@@ -140,19 +118,13 @@ function initNavigation() {
   });
 }
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   initParticles();
   initNavigation();
-  
+
   const hash = window.location.hash.replace("#", "");
   if (hash) {
     const btn = document.querySelector(`.filter-buttons button[data-filter="${hash}"]`);
     if (btn) btn.click();
   }
-});
-
-document.querySelectorAll('.gallery img').forEach(img => {
-  img.addEventListener('load', () => {
-    img.setAttribute('data-loaded', 'true');
-  });
 });
