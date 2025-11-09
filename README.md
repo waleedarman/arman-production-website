@@ -17,9 +17,8 @@ It highlights the studio’s services, portfolio gallery, contact information, a
 
 **Frontend:**
 - HTML5  
-- CSS3 / Sass  
+- CSS3   
 - JavaScript (ES6)  
-- Bootstrap 5.3  
 
 **Other Tools & Platforms:**
 - Netlify (Hosting & Deployment)  
@@ -31,16 +30,17 @@ It highlights the studio’s services, portfolio gallery, contact information, a
 
 ## 📂 Project Structure
 
+```text
 Arman-Production/
 │
 ├── index.html              # Main homepage
-├── pages/
-│   ├── page2.html          # Portfolio / gallery page
-│   └── about.html          # About us page (optional)
 │
-├── css/
-│   ├── style.css           # Compiled CSS
-│   └── style.scss          # Sass source file
+├── pages/
+│   ├── page2.html          # gallery page
+│          
+├── CSS/
+│   ├── page1.css           # Compiled CSS
+│   └── page2.css          # Sass source file
 │
 ├── js/
 │   └── main.js             # Scripts for interactivity and animations
@@ -49,15 +49,13 @@ Arman-Production/
 │   └── ...                 # Photos, thumbnails, and icons
 │
 ├── README.md               # Project documentation
-└── assets/
-    └── fonts, icons, etc.
 
 ---
 
 ##  How to Run Locally
 
 1. **Clone the repository**
-   git clone https://github.com/yourusername/Arman-Production.git
+   git clone https://github.com/waleedarman/Arman-Production.git
    cd Arman-Production
 
 2. **Open the project**
@@ -71,29 +69,9 @@ Arman-Production/
 
 ##  Features
 
-- Fully responsive design (mobile, tablet, desktop)  
-- Bootstrap components and custom SCSS styling  
+- Fully responsive design (mobile, tablet, desktop)    
 - Image gallery with hover effects and overlay text  
 - Smooth scrolling and section transitions  
 - SEO-ready structure and meta tags  
 - Clean and minimal UI
-
----
-
-##  Deployment
-
-The website is deployed using **Netlify**.  
-Any new changes pushed to the main branch are automatically deployed.
-
-To deploy manually:
-1. Build or update static files.  
-2. Push changes to GitHub.  
-3. Connect your repository to Netlify and deploy.
-
----
-
-## Author
-
-**Developed by:** Waleed Arman   
-🌐 Website: [arman-production-website.netlify.app](https://arman-production-website.netlify.app/)
 
